@@ -1,6 +1,5 @@
+import DashBoard from "modules/dashboard/DashBoard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "../../App";
-import DashBoard from "../../modules/dashboard/DashBoard";
 
 export default function Navigator() {
 	return (
