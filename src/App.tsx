@@ -1,9 +1,12 @@
+import "./App.css";
+import Navigator from "./commons/navigation/Navigator";
+
 function App() {
-  return (
-    <div>
-      <h1>Hola</h1>
-    </div>
-  );
+	return (
+		<>
+			<Navigator />
+		</>
+	);
 }
 
 export default App;
