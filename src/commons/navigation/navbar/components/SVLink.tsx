@@ -14,6 +14,7 @@ export default function SVLink(props: ISVLink) {
 			style={{
 				color: PRIMARY,
 				textDecoration: "underline",
+				textDecorationColor: PRIMARY,
 				display: "inline-block",
 				padding: 20,
 			}}
