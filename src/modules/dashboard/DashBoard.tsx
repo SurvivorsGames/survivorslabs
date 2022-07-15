@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import SVBanner from "commons/components/branch/SVBanner";
+import SVFooter from "commons/components/footer/SVFooter";
 import SVLink from "commons/navigation/navbar/components/SVLink";
 import { PRIMARY, TEXT, THIRD } from "commons/theme/colors";
 import "../../App.css";
@@ -21,7 +22,8 @@ export default function DashBoard() {
 			>
 				<Navbar />
 				<Newest />
-				<About />
+				{/* <About /> */}
+				<SVFooter />
 			</Grid>
 		</div>
 	);

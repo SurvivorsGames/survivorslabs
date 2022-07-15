@@ -61,7 +61,8 @@ export default function Newest() {
 								backgroundColor: SECONDARY,
 								color: TEXT,
 							}}
-							href="#"
+							href="https://biolink.info/protegete"
+							target="__blank"
 						>
 							DESCARGA AHORA
 						</Button>
