@@ -13,6 +13,7 @@ export default function SVLink(props: ISVLink) {
 			onClick={onClick}
 			style={{
 				color: PRIMARY,
+				fontFamily: "Graduate",
 				textDecoration: "underline",
 				textDecorationColor: PRIMARY,
 				display: "inline-block",
