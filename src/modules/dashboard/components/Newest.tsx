@@ -4,8 +4,15 @@ import { TEXT, SECONDARY } from "commons/theme/colors";
 
 export default function Newest() {
 	return (
-		<Grid container>
-			<Grid item xs={12} md={12} lg={12}>
+		<Grid
+			container
+			style={{
+				backgroundColor: "#FFF",
+				justifyContent: "center",
+				paddingBottom: "50px",
+			}}
+		>
+			<Grid item xs={12} md={12} lg={12} style={{ marginTop: "50px" }}>
 				<div
 					style={{
 						display: "flex",
@@ -48,7 +55,7 @@ export default function Newest() {
 							<br /> En nuestra aplicación puedes buscar los
 							reportes que ha tenido un usuario por las placas de
 							su vehículo y es tu decisión tomar o no el servicio.
-							Asi mismo, puedes reportar cualquier caso, cuando te
+							Asimismo, puedes reportar cualquier caso, cuando te
 							hayas sentido incomoda o hayas detectado actividad
 							sospechosa durante tu viaje.
 						</p>

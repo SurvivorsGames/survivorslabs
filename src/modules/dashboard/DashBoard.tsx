@@ -20,7 +20,7 @@ export default function DashBoard() {
 					justifyContent: "center",
 				}}
 			>
-				<Navbar />
+				{/* <Navbar /> */}
 				<Newest />
 				{/* <About /> */}
 				<SVFooter />
