@@ -6,7 +6,7 @@ import { PRIMARY, TEXT, THIRD } from "commons/theme/colors";
 import "../../App.css";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
-import Newest from "./components/Newest";
+import { NewestLarge, NewestMobile } from "./components/Newest";
 
 export default function DashBoard() {
 	return (
@@ -21,7 +21,38 @@ export default function DashBoard() {
 				}}
 			>
 				{/* <Navbar /> */}
-				<Newest />
+				{/* Vista Para PC */}
+				<Grid
+					item
+					lg={12}
+					sx={{
+						display: {
+							xs: "none",
+							sm: "none",
+							md: "none",
+							lg: "inline-block",
+						},
+					}}
+				>
+					<NewestLarge />
+				</Grid>
+				{/* Vista para telefonos y tablets  */}
+				<Grid
+					item
+					sm={12}
+					md={12}
+					xs={12}
+					sx={{
+						display: {
+							xs: "block",
+							sm: "block",
+							md: "block",
+							lg: "none",
+						},
+					}}
+				>
+					<NewestMobile />
+				</Grid>
 				{/* <About /> */}
 				<SVFooter />
 			</Grid>
