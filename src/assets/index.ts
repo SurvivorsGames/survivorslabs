@@ -1,5 +1,4 @@
 import Banner from "./Banner.jpg";
-import NewestBanner from "./newest/Newest.png";
-import NewestBannerMobile from "./newest/NewestMobile.png";
+import PPFBanner from "./newest/ppfBanner.png";
 
-export { Banner, NewestBanner, NewestBannerMobile };
+export { Banner, PPFBanner };
