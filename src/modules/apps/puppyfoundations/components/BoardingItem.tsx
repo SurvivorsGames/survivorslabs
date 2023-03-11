@@ -31,7 +31,7 @@ export default function BoardingItem(props: IBoardingItem) {
 							height={"200px"}
 						/>
 					</Grid>
-					<Grid xs={12} md={6} lg={6}>
+					<Grid item xs={12} md={6} lg={6}>
 						<Title alingment={alignment}>{title}</Title>
 						<Description alingment={alignment}>
 							{description}
@@ -40,7 +40,7 @@ export default function BoardingItem(props: IBoardingItem) {
 				</>
 			) : (
 				<>
-					<Grid xs={12} md={6} lg={6}>
+					<Grid item xs={12} md={6} lg={6}>
 						<Title alingment={alignment}>{title}</Title>
 						<Description alingment={alignment}>
 							{description}
@@ -76,6 +76,7 @@ const Title = (props: { children: any; alingment: string }) => {
 					? "left"
 					: "right",
 				color: third,
+				fontFamily: "Poppins",
 			}}
 		>
 			{props.children}
@@ -93,6 +94,7 @@ const Description = (props: { children: any; alingment: string }) => {
 					? "left"
 					: "right",
 				color: light,
+				fontFamily: "Poppins",
 			}}
 		>
 			{props.children}

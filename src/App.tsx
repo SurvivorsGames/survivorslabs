@@ -16,6 +16,10 @@ function App() {
 						font: "Roboto Mono",
 						weights: [300],
 					},
+					{
+						font: "Poppins",
+						weights: [300],
+					},
 				]}
 			/>
 		</div>

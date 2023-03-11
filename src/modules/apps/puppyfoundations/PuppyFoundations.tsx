@@ -44,7 +44,10 @@ const items = [
 export default function PuppyFoundations() {
 	return (
 		<Grid container style={{ backgroundColor: primary }}>
-			<SVBanner picture={PPFBanner} />
+			<SVBanner
+				desktopPicture={PPFBanner}
+				mobilePicture="https://firebasestorage.googleapis.com/v0/b/puppyfound-a629c.appspot.com/o/assets%2Ficons%2Ficon.png?alt=media&token=77bf6f2a-8b18-4367-8240-1ed2d338b3be"
+			/>
 			{items.map((item, index) => (
 				<BoardingItem
 					key={index}
@@ -74,12 +77,15 @@ export default function PuppyFoundations() {
 				<Button
 					href="https://play.google.com/store/apps/details?id=com.survivorsgames.puppyfound&hl=es_CO&gl=US"
 					target="_blank"
-					style={{ marginLeft: isMobile ? "0px" : "auto" }}
+					style={{
+						marginLeft: isMobile ? "0px" : "auto",
+					}}
 				>
 					<img
 						src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2Fgoogle%20play.png?alt=media&token=19b55063-3b62-4bf4-b023-ca7061fc56b0"
 						alt="google play"
 						height="90px"
+						width="230px"
 					/>
 				</Button>
 			</Grid>
@@ -97,12 +103,15 @@ export default function PuppyFoundations() {
 				<Button
 					href="https://apps.apple.com/uy/app/puppy-foundations/id1636893966"
 					target="_blank"
-					style={{ marginRight: isMobile ? "0px" : "auto" }}
+					style={{
+						marginRight: isMobile ? "0px" : "auto",
+					}}
 				>
 					<img
 						src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2Fapp%20store.png?alt=media&token=15a20f88-6757-4d2e-9746-aa0df60ba448"
 						alt="app store"
 						height="70px"
+						width="230px"
 					/>
 				</Button>
 			</Grid>
