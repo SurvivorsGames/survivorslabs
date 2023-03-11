@@ -10,6 +10,8 @@ import {
 } from "commons/constants/UrlPics";
 import BoardingItem from "./components/BoardingItem";
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 const items = [
 	{
 		title: "Mascotas perdidas",
@@ -57,16 +59,22 @@ export default function PuppyFoundations() {
 					Descarga ahora
 				</h1>
 			</Grid>
+
 			<Grid
 				item
 				xs={12}
-				md={12}
-				lg={12}
-				style={{ display: "flex", justifyContent: "center" }}
+				md={6}
+				lg={6}
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+				}}
 			>
 				<Button
 					href="https://play.google.com/store/apps/details?id=com.survivorsgames.puppyfound&hl=es_CO&gl=US"
 					target="_blank"
+					style={{ marginLeft: isMobile ? "0px" : "auto" }}
 				>
 					<img
 						src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2Fgoogle%20play.png?alt=media&token=19b55063-3b62-4bf4-b023-ca7061fc56b0"
@@ -74,9 +82,22 @@ export default function PuppyFoundations() {
 						height="90px"
 					/>
 				</Button>
+			</Grid>
+			<Grid
+				item
+				xs={12}
+				md={6}
+				lg={6}
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+				}}
+			>
 				<Button
 					href="https://apps.apple.com/uy/app/puppy-foundations/id1636893966"
 					target="_blank"
+					style={{ marginRight: isMobile ? "0px" : "auto" }}
 				>
 					<img
 						src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2Fapp%20store.png?alt=media&token=15a20f88-6757-4d2e-9746-aa0df60ba448"
@@ -85,7 +106,6 @@ export default function PuppyFoundations() {
 					/>
 				</Button>
 			</Grid>
-			{/* <Button title="Descarga ahora" href="" target="_blank" /> */}
 		</Grid>
 	);
 }

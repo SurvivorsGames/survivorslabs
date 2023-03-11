@@ -8,12 +8,14 @@ interface IBoardingItem {
 	alignment?: string;
 }
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 export default function BoardingItem(props: IBoardingItem) {
 	const { title, description, picture, alignment = "left" } = props;
 
 	return (
 		<Grid container style={{ padding: "50px" }}>
-			{alignment === "left" ? (
+			{isMobile || alignment === "left" ? (
 				<>
 					<Grid
 						item
@@ -68,7 +70,11 @@ const Title = (props: { children: any; alingment: string }) => {
 	return (
 		<h1
 			style={{
-				textAlign: props.alingment === "left" ? "left" : "right",
+				textAlign: isMobile
+					? "center"
+					: props.alingment === "left"
+					? "left"
+					: "right",
 				color: third,
 			}}
 		>
@@ -81,7 +87,11 @@ const Description = (props: { children: any; alingment: string }) => {
 	return (
 		<p
 			style={{
-				textAlign: props.alingment === "left" ? "left" : "right",
+				textAlign: isMobile
+					? "center"
+					: props.alingment === "left"
+					? "left"
+					: "right",
 				color: light,
 			}}
 		>
