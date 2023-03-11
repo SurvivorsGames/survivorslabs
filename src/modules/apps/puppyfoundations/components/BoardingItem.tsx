@@ -12,7 +12,7 @@ export default function BoardingItem(props: IBoardingItem) {
 	const { title, description, picture, alignment = "left" } = props;
 
 	return (
-		<Grid container style={{ backgroundColor: primary, padding: "50px" }}>
+		<Grid container style={{ padding: "50px" }}>
 			{alignment === "left" ? (
 				<>
 					<Grid
