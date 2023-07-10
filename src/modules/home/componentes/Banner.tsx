@@ -38,11 +38,11 @@ const Banner = () => {
 	return (
 		<div
 			style={{
-				height: "100vh",
+				height: "90vh",
 			}}
 		>
 			<img
-				src={require("../../../assets/design/banner.jpg")}
+				src={require("../../../assets/design/banner.webp")}
 				alt="banner"
 				style={{
 					width: "100%",
