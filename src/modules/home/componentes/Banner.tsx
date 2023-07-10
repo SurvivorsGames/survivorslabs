@@ -41,6 +41,18 @@ const Banner = () => {
 				height: "100vh",
 			}}
 		>
+			<img
+				src={require("../../../assets/design/banner.jpg")}
+				alt="banner"
+				style={{
+					width: "100%",
+					position: "absolute",
+					zIndex: -1,
+					opacity: 0.5,
+					height: "100vh",
+					objectFit: "cover",
+				}}
+			/>
 			<AppBar position="static" color="transparent" elevation={0}>
 				<Toolbar>
 					<img
