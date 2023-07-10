@@ -1,0 +1,59 @@
+.banner-title:hover {
+	transform: scale(1.1);
+}
+.menu-item {
+	padding: 5px;
+	border-bottom: 1px solid white;
+	color: white;
+	position: relative;
+	overflow: hidden;
+}
+
+.menu-item:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 100%;
+	background-color: #febc42;
+	z-index: -1;
+	transition: width 0.3s ease-in-out;
+}
+
+.menu-item:hover:before {
+	width: 100%;
+}
+
+.menu-item:hover {
+	color: #1b1f20;
+}
+
+@keyframes typing {
+	0% {
+		width: 0;
+		color: white;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.typing {
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: break-word;
+	margin: 0 auto;
+	animation: typing 2s steps(40, end);
+	letter-spacing: 5px;
+	color: #ffefc6;
+}
+
+.typing:hover {
+	color: #febc42;
+}
+
+.button:hover {
+	transform: scaleX(1.02);
+	color: "white";
+}

@@ -1,28 +1,21 @@
-import GoogleFontLoader from "react-google-font-loader";
+import { GlobalStyles, ThemeProvider } from "@mui/material";
 import "./App.css";
 import Navigator from "./commons/navigation/Navigator";
+import theme from "assets/theme/theme";
 
 function App() {
 	return (
-		<div className="Container">
-			<Navigator />
-			<GoogleFontLoader
-				fonts={[
-					{
-						font: "Graduate",
-						weights: [400],
+		<ThemeProvider theme={theme}>
+			<GlobalStyles
+				styles={{
+					"@font-face": {
+						fontFamily: "Academy",
+						src: `url(${require("./assets/fonts/OrbitronExtraBold.ttf")}) format('truetype')`,
 					},
-					{
-						font: "Roboto Mono",
-						weights: [300],
-					},
-					{
-						font: "Poppins",
-						weights: [300],
-					},
-				]}
+				}}
 			/>
-		</div>
+			<Navigator />
+		</ThemeProvider>
 	);
 }
 
