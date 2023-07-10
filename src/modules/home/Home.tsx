@@ -11,10 +11,10 @@ export default function Home() {
 			<Element name="banner" id="banner" className="section">
 				<Banner />
 			</Element>
-			<Element name="about" id="about" className="section">
+			<Element name="motivational" id="motivational" className="section">
 				<MotivationalText />
 			</Element>
-			<Element name="products" id="products" className="section">
+			<Element name="about" id="products" className="section">
 				<About />
 			</Element>
 		</Container>
