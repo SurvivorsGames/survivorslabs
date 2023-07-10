@@ -3,19 +3,20 @@ import Banner from "./componentes/Banner";
 import About from "modules/about/About";
 import MotivationalText from "modules/about/MotivationalText";
 import "./styles/home.css";
+import { Element } from "react-scroll";
 
 export default function Home() {
 	return (
 		<Container className="container" maxWidth="xl" style={{ padding: 0 }}>
-			<div className="section">
+			<Element name="banner" id="banner" className="section">
 				<Banner />
-			</div>
-			<div className="section">
+			</Element>
+			<Element name="about" id="about" className="section">
 				<MotivationalText />
-			</div>
-			<div className="section">
+			</Element>
+			<Element name="products" id="products" className="section">
 				<About />
-			</div>
+			</Element>
 		</Container>
 	);
 }

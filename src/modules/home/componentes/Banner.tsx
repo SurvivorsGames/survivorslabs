@@ -18,6 +18,7 @@ import { TEXT } from "commons/theme/colors";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import useResponsive from "commons/hooks/useResponsive";
+import { Link as ScrollLink } from "react-scroll";
 
 const Banner = () => {
 	const { isMobile } = useResponsive();
@@ -28,9 +29,9 @@ const Banner = () => {
 	};
 
 	const menuItems = [
-		{ text: "Acerca de", link: "/about", icon: null },
-		{ text: "Productos", link: "/products", icon: null },
-		{ text: "Contacto", link: "/contact", icon: null },
+		{ text: "Acerca de", link: "#about", icon: null },
+		{ text: "Productos", link: "#products", icon: null },
+		{ text: "Contacto", link: "#contact", icon: null },
 	];
 
 	return (
@@ -63,7 +64,7 @@ const Banner = () => {
 					/>
 					<Typography
 						variant="h4"
-						component={Link}
+						component={ScrollLink}
 						to="/"
 						style={{
 							flexGrow: 1,
@@ -74,6 +75,9 @@ const Banner = () => {
 							fontSize: isMobile ? "1rem" : "2rem",
 							fontStyle: "italic",
 						}}
+						smooth={true} // Animación de desplazamiento suave
+						duration={500} // Tiempo de la animación
+						spy
 					>
 						Survivors Labs
 					</Typography>
@@ -96,13 +100,22 @@ const Banner = () => {
 									{menuItems.map((item, index) => (
 										<ListItem
 											key={index}
-											component={Link}
-											to={item.link}
 											onClick={handleDrawerToggle}
 											className="menu-item"
 											style={{ color: "black" }}
 										>
-											<ListItemText primary={item.text} />
+											<a
+												key={index}
+												href={item.link}
+												style={{
+													textDecoration: "none",
+													color: "black",
+												}}
+											>
+												<ListItemText
+													primary={item.text}
+												/>
+											</a>
 										</ListItem>
 									))}
 								</List>
@@ -111,21 +124,27 @@ const Banner = () => {
 					) : (
 						<nav>
 							{menuItems.map((item, index) => (
-								<Typography
+								<a
 									key={index}
-									variant="h6"
+									href={item.link}
 									style={{
-										display: "inline-block",
-										margin: "0 8px",
 										textDecoration: "none",
-										fontSize: "1rem",
+										color: "white",
 									}}
-									component={Link}
-									to={item.link}
-									className="menu-item"
 								>
-									{item.text}
-								</Typography>
+									<Typography
+										variant="h6"
+										style={{
+											display: "inline-block",
+											margin: "0 8px",
+											textDecoration: "none",
+											fontSize: "1rem",
+										}}
+										className="menu-item"
+									>
+										{item.text}
+									</Typography>
+								</a>
 							))}
 						</nav>
 					)}
