@@ -72,7 +72,7 @@ export default function About() {
 								<br />
 							</Typography>
 						</Grid>
-						<Fade when={isVisible} delay={2000}>
+						<Fade when={isVisible} delay={500}>
 							<Grid
 								item
 								md={6}
