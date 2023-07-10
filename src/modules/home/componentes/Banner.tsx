@@ -18,6 +18,7 @@ import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import useResponsive from "commons/hooks/useResponsive";
 import { Link } from "react-router-dom";
+import Custombutton from "commons/components/Custombutton";
 
 const Banner = () => {
 	const { isMobile } = useResponsive();
@@ -178,17 +179,7 @@ const Banner = () => {
 							item
 							style={{ margin: "30px", marginTop: "100px" }}
 						>
-							<Button
-								className="button"
-								sx={{
-									width: 300,
-									fontFamily: "Roboto",
-									color: TEXT,
-								}}
-								variant="outlined"
-							>
-								Obtener cotización
-							</Button>
+							<Custombutton>Cotizar ahora</Custombutton>
 						</Grid>
 					</Fade>
 				</Grid>
