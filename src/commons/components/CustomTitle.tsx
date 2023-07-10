@@ -22,7 +22,7 @@ export default function CustomTitle(props: ICustomTitle) {
 			variant={variant}
 			style={{
 				width: "100%",
-				display: "flex",
+				display: "block",
 				textDecoration: "none",
 				fontSize: fontSize,
 				textAlign: textAlign,

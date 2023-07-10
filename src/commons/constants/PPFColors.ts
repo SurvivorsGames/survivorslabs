@@ -1,19 +1,12 @@
-const primary = "#012138";
-const secondary = "#2165BF";
-const third = "#F26E22";
-const dark = "#000";
-const light = "#fff";
-const disabled = "#939393";
-const placeholderColor = "#939393";
-const warning = "#FCBA12";
-
-export {
-	primary,
-	secondary,
-	third,
-	dark,
-	light,
-	disabled,
-	placeholderColor,
-	warning,
+const ppfColors = {
+	primary: "#012138",
+	secondary: "#2165BF",
+	third: "#F26E22",
+	dark: "#000",
+	light: "#fff",
+	disabled: "#939393",
+	placeholderColor: "#939393",
+	warning: "#FCBA12",
 };
+
+export { ppfColors };

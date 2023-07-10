@@ -4,6 +4,7 @@ import About from "modules/about/About";
 import MotivationalText from "modules/about/MotivationalText";
 import "./styles/home.css";
 import { Element } from "react-scroll";
+import Promoted from "modules/promoted/Promoted";
 
 export default function Home() {
 	return (
@@ -14,8 +15,11 @@ export default function Home() {
 			<Element name="motivational" id="motivational" className="section">
 				<MotivationalText />
 			</Element>
-			<Element name="about" id="products" className="section">
+			<Element name="about" id="about" className="section">
 				<About />
+			</Element>
+			<Element name="promoted" id="promoted" className="section">
+				<Promoted />
 			</Element>
 		</Container>
 	);

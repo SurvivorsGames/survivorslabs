@@ -48,7 +48,7 @@ export default function About() {
 								variant={isMobile ? "body2" : "body1"}
 								component={"p"}
 								textAlign={"justify"}
-								sx={{ lineHeight: 1.5 }}
+								sx={{ lineHeight: 1.5, letterSpacing: "3px" }}
 								fontFamily={"OrbitronRegular"}
 							>
 								Survivors Labs es una compañía pionera en el
@@ -66,10 +66,6 @@ export default function About() {
 								las necesidades más complejas de nuestros
 								clientes.
 								<br />
-								<br />
-								Amamos los emprendimientos, por eso te
-								prometemos dar lo mejor de nuestra parte para
-								hacer un éxito digital el tuyo
 							</Typography>
 						</Grid>
 						<Fade when={isVisible} delay={2000}>
