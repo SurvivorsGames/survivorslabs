@@ -1,9 +1,11 @@
 import { Typography } from "@mui/material";
+import { TEXT } from "commons/theme/colors";
 
 interface ICustomTitle {
 	variant?: any;
 	fontSize?: string;
 	textAlign?: any;
+	color?: string;
 	children: any;
 }
 
@@ -13,6 +15,7 @@ export default function CustomTitle(props: ICustomTitle) {
 		fontSize = "2rem",
 		children,
 		textAlign = "left",
+		color = TEXT,
 	} = props;
 	return (
 		<Typography
@@ -23,6 +26,7 @@ export default function CustomTitle(props: ICustomTitle) {
 				textDecoration: "none",
 				fontSize: fontSize,
 				textAlign: textAlign,
+				color: color,
 			}}
 			component={variant}
 		>
