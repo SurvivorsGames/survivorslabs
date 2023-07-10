@@ -9,8 +9,6 @@ import {
 	List,
 	ListItem,
 	ListItemText,
-	useMediaQuery,
-	useTheme,
 	Grid,
 	Button,
 } from "@mui/material";
@@ -19,12 +17,10 @@ import "../styles/banner.css";
 import { TEXT } from "commons/theme/colors";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import useResponsive from "commons/hooks/useResponsive";
 
 const Banner = () => {
-	const theme = useTheme();
-	const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-	const tablet = useMediaQuery(theme.breakpoints.down("md"));
-	const isMobile = mobile || tablet;
+	const { isMobile } = useResponsive();
 	const [openDrawer, setOpenDrawer] = React.useState(false);
 
 	const handleDrawerToggle = () => {
@@ -40,7 +36,7 @@ const Banner = () => {
 	return (
 		<div
 			style={{
-				height: "90vh",
+				height: "100vh",
 			}}
 		>
 			<Zoom ssrFadeout>
@@ -52,7 +48,7 @@ const Banner = () => {
 						position: "absolute",
 						zIndex: -1,
 						opacity: 0.5,
-						height: "90vh",
+						height: "100vh",
 						objectFit: "cover",
 						alignSelf: "flex-end",
 					}}
@@ -76,6 +72,7 @@ const Banner = () => {
 							textDecoration: "none",
 							color: "white",
 							fontSize: isMobile ? "1rem" : "2rem",
+							fontStyle: "italic",
 						}}
 					>
 						Survivors Labs

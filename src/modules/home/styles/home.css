@@ -1,0 +1,16 @@
+.container {
+	/* Habilita el scroll snapping */
+	scroll-snap-type: y mandatory;
+
+	/* Tu estilo usual aquí, como asegurarte que esto sea un contenedor scrollable */
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+.section {
+	/* Esto hace que el contenedor se detenga en esta sección */
+	scroll-snap-align: start;
+
+	/* Tu estilo usual aquí */
+	height: 100vh;
+}
