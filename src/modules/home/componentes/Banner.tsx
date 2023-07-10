@@ -17,7 +17,7 @@ import { TEXT } from "commons/theme/colors";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import useResponsive from "commons/hooks/useResponsive";
-import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 	const { isMobile } = useResponsive();
@@ -46,8 +46,7 @@ const Banner = () => {
 					style={{
 						width: "100%",
 						position: "absolute",
-						zIndex: -1,
-						opacity: 0.5,
+						zIndex: -2,
 						height: "100vh",
 						objectFit: "cover",
 						alignSelf: "flex-end",
@@ -59,11 +58,13 @@ const Banner = () => {
 					<img
 						alt="icon"
 						src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2FIcon.png?alt=media&token=5754d7df-0133-4be1-bbdf-3b4af127066e"
-						style={{ width: isMobile ? "1.5rem" : "2rem" }}
+						style={{
+							width: isMobile ? "1.5rem" : "2rem",
+						}}
 					/>
 					<Typography
-						variant="h4"
-						component={ScrollLink}
+						variant="h1"
+						component={Link}
 						to="/"
 						style={{
 							flexGrow: 1,
@@ -72,11 +73,8 @@ const Banner = () => {
 							textDecoration: "none",
 							color: "white",
 							fontSize: isMobile ? "1rem" : "2rem",
-							fontStyle: "italic",
+							zIndex: 10,
 						}}
-						smooth={true} // Animación de desplazamiento suave
-						duration={500} // Tiempo de la animación
-						spy
 					>
 						Survivors Labs
 					</Typography>

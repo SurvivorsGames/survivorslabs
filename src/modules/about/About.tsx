@@ -22,6 +22,10 @@ export default function About() {
 		<Grid
 			container
 			sx={{
+				display: "flex",
+				alignItems: "center",
+				alignContent: "center",
+				height: "100vh",
 				p: 3,
 				mt: 25,
 				maxWidth: "90%",
@@ -88,6 +92,7 @@ export default function About() {
 										width: "150px",
 										alignSelf: "center",
 										margin: "20px",
+										objectFit: "contain",
 									}}
 								/>
 							</Grid>

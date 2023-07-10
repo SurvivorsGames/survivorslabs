@@ -102,8 +102,6 @@ export default function Promoted() {
 								encontraste y ayudar a otros usuarios.
 								<br />
 								<br />
-								Conectate con fundaciones y otros usuarios
-								<br />
 								¡Únete a esta gran comunidad!
 							</Typography>
 						</Grid>
