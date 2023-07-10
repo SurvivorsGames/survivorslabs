@@ -80,35 +80,33 @@ export default function Promoted() {
 								<CustomTitle>Proyectos destacados</CustomTitle>
 							</Grid>
 						</ParallaxLayer>
-						<Card>
-							<Grid item md={12} xs={12}>
-								<CustomTitle color={ppfColors.third}>
-									Puppy Foundations
-								</CustomTitle>
-								<Typography
-									variant="body1"
-									component={"p"}
-									sx={{
-										mt: 3,
-										textAlign: "left",
-										letterSpacing: "1px",
-									}}
-									fontFamily={"OrbitronRegular"}
-								>
-									Puppy foundations es una aplicación móvil
-									donde puedes buscar mascotas que esten
-									listas para ser adoptadas. También puedes
-									reportar a tu mascota por si se ha perdido o
-									reportar una que encontraste y ayudar a
-									otros usuarios.
-									<br />
-									<br />
-									Conectate con fundaciones y otros usuarios
-									<br />
-									¡Únete a esta gran comunidad!
-								</Typography>
-							</Grid>
-						</Card>
+
+						<Grid item md={6} xs={6}>
+							<CustomTitle color={ppfColors.third}>
+								Puppy Foundations
+							</CustomTitle>
+							<Typography
+								variant="body1"
+								component={"p"}
+								sx={{
+									mt: 3,
+									textAlign: "justify",
+									letterSpacing: "1px",
+								}}
+								fontFamily={"OrbitronRegular"}
+							>
+								Puppy foundations es una aplicación móvil donde
+								puedes buscar mascotas que esten listas para ser
+								adoptadas. También puedes reportar a tu mascota
+								por si se ha perdido o reportar una que
+								encontraste y ayudar a otros usuarios.
+								<br />
+								<br />
+								Conectate con fundaciones y otros usuarios
+								<br />
+								¡Únete a esta gran comunidad!
+							</Typography>
+						</Grid>
 					</ParallaxLayer>
 
 					{items.map((item, index) => (
@@ -133,6 +131,16 @@ export default function Promoted() {
 								<CustomTitle textAlign="center">
 									{item.title}
 								</CustomTitle>
+								<Typography
+									variant="body2"
+									component={"p"}
+									sx={{
+										fontFamily: "OrbitronRegular",
+										textAlign: "center",
+									}}
+								>
+									{item.description}
+								</Typography>
 							</Card>
 						</ParallaxLayer>
 					))}
