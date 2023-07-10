@@ -17,6 +17,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import "../styles/banner.css";
 import { TEXT } from "commons/theme/colors";
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 
 const Banner = () => {
 	const theme = useTheme();
@@ -41,18 +43,21 @@ const Banner = () => {
 				height: "90vh",
 			}}
 		>
-			<img
-				src={require("../../../assets/design/banner.webp")}
-				alt="banner"
-				style={{
-					width: "100%",
-					position: "absolute",
-					zIndex: -1,
-					opacity: 0.5,
-					height: "100vh",
-					objectFit: "cover",
-				}}
-			/>
+			<Zoom ssrFadeout>
+				<img
+					src={require("../../../assets/design/banner.webp")}
+					alt="banner"
+					style={{
+						width: "100%",
+						position: "absolute",
+						zIndex: -1,
+						opacity: 0.5,
+						height: "90vh",
+						objectFit: "cover",
+						alignSelf: "flex-end",
+					}}
+				/>
+			</Zoom>
 			<AppBar position="static" color="transparent" elevation={0}>
 				<Toolbar>
 					<img
@@ -155,19 +160,24 @@ const Banner = () => {
 							Empresa
 						</CustomSolution>
 					</Grid>
-					<Grid item style={{ margin: "30px", marginTop: "100px" }}>
-						<Button
-							className="button"
-							sx={{
-								width: 300,
-								fontFamily: "Roboto",
-								color: TEXT,
-							}}
-							variant="outlined"
+					<Fade left delay={2000}>
+						<Grid
+							item
+							style={{ margin: "30px", marginTop: "100px" }}
 						>
-							Obtener cotización
-						</Button>
-					</Grid>
+							<Button
+								className="button"
+								sx={{
+									width: 300,
+									fontFamily: "Roboto",
+									color: TEXT,
+								}}
+								variant="outlined"
+							>
+								Obtener cotización
+							</Button>
+						</Grid>
+					</Fade>
 				</Grid>
 			</AppBar>
 		</div>
