@@ -3,6 +3,7 @@ import CustomTitle from "commons/components/CustomTitle";
 import { PRIMARY, TEXT } from "commons/theme/colors";
 import Fade from "react-reveal/Fade";
 import "../styles/products.css";
+import useResponsive from "commons/hooks/useResponsive";
 
 interface IProduct {
 	title: string;
@@ -13,6 +14,8 @@ interface IProduct {
 
 export default function Product(props: IProduct) {
 	const { title, description, slide } = props;
+	const { isMobile, onlyMobile, onlyTablet } = useResponsive();
+
 	return (
 		<Grid
 			item
@@ -25,12 +28,12 @@ export default function Product(props: IProduct) {
 				justifyContent: "space-between",
 				border: `solid 1px ${PRIMARY}`,
 				padding: "10px",
-				height: "400px",
-				width: "345px",
-				margin: "15px",
+				height: "500px",
+				width: onlyMobile ? "100%" : "375px",
+				margin: onlyMobile ? "0px" : onlyTablet ? "0px" : "15px",
 				borderRadius: "2px",
 			}}
-			className="product"
+			className={isMobile ? "" : "product"}
 		>
 			<Fade
 				left={slide === "left"}
