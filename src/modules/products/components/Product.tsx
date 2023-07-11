@@ -25,7 +25,7 @@ export default function Product(props: IProduct) {
 			style={{
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "space-between",
+				justifyContent: "space-around",
 				border: `solid 1px ${PRIMARY}`,
 				padding: "10px",
 				height: "500px",

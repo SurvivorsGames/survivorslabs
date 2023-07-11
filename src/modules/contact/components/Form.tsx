@@ -78,7 +78,7 @@ function ContactForm() {
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
-					height: "70vh",
+					height: "60vh",
 				}}
 			>
 				{true && (

@@ -35,7 +35,7 @@ export default function Products() {
 				onlyMobile
 					? {
 							p: 3,
-							mt: 25,
+							mt: 5,
 							maxWidth: "100vw",
 							height: "100vh",
 							alignItems: "center",

@@ -33,7 +33,7 @@ export default function Contact() {
 					display: "flex",
 					flexDirection: "row",
 					justifyContent: onlyMobile ? "center" : "space-between",
-					marginTop: "auto", // Añade esta línea
+					marginTop: onlyMobile ? "100px" : "auto", // Añade esta línea
 					borderTop: `3px solid ${PRIMARY}`,
 				}}
 				className="footer"
