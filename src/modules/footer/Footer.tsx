@@ -4,6 +4,7 @@ import "./styles/footer.css";
 import { PRIMARY, TEXT } from "commons/theme/colors";
 import useResponsive from "commons/hooks/useResponsive";
 import ContactForm from "./components/Form";
+import Fade from "react-reveal/Fade";
 
 export default function Footer() {
 	const { isMobile } = useResponsive();
@@ -18,9 +19,11 @@ export default function Footer() {
 				flexDirection: "row",
 			}}
 		>
-			<Grid item md={12} xs={12} sx={{ height: "70vh" }}>
+			<Grid item md={12} xs={12}>
 				<CustomTitle>Contacto</CustomTitle>
-				<ContactForm />
+				<Fade bottom>
+					<ContactForm />
+				</Fade>
 			</Grid>
 			<Grid
 				item

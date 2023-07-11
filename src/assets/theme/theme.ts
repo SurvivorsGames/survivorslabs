@@ -25,14 +25,17 @@ const theme = createTheme({
 			styleOverrides: {
 				root: {
 					"& fieldset": {
-						borderColor: THIRD, // Reemplaza 'desiredColor' con el color que quieras usar.
+						borderColor: THIRD,
 					},
 					"&:hover fieldset": {
-						borderColor: THIRD, // Reemplaza 'desiredColor' con el color que quieras usar.
+						borderColor: THIRD,
 					},
 					"&.Mui-focused fieldset": {
-						borderColor: PRIMARY, // Reemplaza 'desiredColor' con el color que quieras usar.
+						borderColor: PRIMARY,
 					},
+					// "&.Mui-error fieldset": {
+					// 	borderColor: "red",
+					// },
 				},
 			},
 		},
