@@ -11,6 +11,7 @@ import { Grid, Typography } from "@mui/material";
 import { TEXT } from "commons/theme/colors";
 import useContact from "../hooks/useContact";
 import CustomLoading from "commons/components/CustomLoading";
+import Fade from "react-reveal/Fade";
 
 const FormContainer = styled(Box)({
 	display: "flex",
@@ -36,10 +37,9 @@ const initialState = {
 
 function ContactForm() {
 	const [formData, setFormData] = useState<IFormData>(initialState);
-
 	const { loading, handleSendForm } = useContact();
-
 	const [error, setError] = useState<string | undefined>(undefined);
+	const [succes, setSucces] = useState<boolean>(false);
 
 	const handleChange = (event: any) => {
 		setError(undefined);
@@ -61,9 +61,10 @@ function ContactForm() {
 
 		let result = await handleSendForm(formData);
 		if (result) {
-			setError(
-				"¡Hemos registrado tus datos! \n Un asesor se pondra en contacto contigo"
-			);
+			setSucces(true);
+			setTimeout(() => {
+				setSucces(false);
+			}, 3000);
 			setFormData(initialState);
 		} else {
 			setError("Ha ocurrido un error. Intenta nuevamente");
@@ -80,8 +81,45 @@ function ContactForm() {
 					height: "70vh",
 				}}
 			>
+				{true && (
+					<Grid
+						item
+						md={12}
+						xs={12}
+						style={{
+							display: succes ? "flex" : "none",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						<Fade fadeIn>
+							<img
+								src={require("../../../assets/design/check.png")}
+								style={{ width: "7rem" }}
+								alt="check.png"
+							/>
+							<Typography
+								variant="h6"
+								component={"h6"}
+								style={{
+									textAlign: "center",
+									fontFamily: "OrbitronRegular",
+								}}
+							>
+								¡Hemos registrado tus datos! <br /> Un asesor se
+								pondra en contacto contigo
+							</Typography>
+						</Fade>
+					</Grid>
+				)}
 				{loading && <CustomLoading />}
-				<Grid container spacing={1} display={loading ? "none" : "flex"}>
+
+				<Grid
+					container
+					spacing={1}
+					display={loading || succes ? "none" : "flex"}
+				>
 					<Grid item md={6} xs={12}>
 						<TextField
 							fullWidth
