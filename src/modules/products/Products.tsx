@@ -13,18 +13,21 @@ export default function Products() {
 			description:
 				"Desarrollamos páginas web excepcionales, atractivas y eficientes. ¡Destaca online con nosotros!",
 			slide: "left",
+			href: "https://wa.me/+573026841676?text=¡Hola Survivors! Me gustaría obtener una asesoría gratis y una cotización para mi negocio",
 		},
 		{
 			title: "Aplicación móvil",
 			description:
 				"Impulsamos tu negocio con aplicaciones móviles innovadoras y efectivas. ¡Transforma tu idea en realidad!",
 			slide: "bottom",
+			href: "https://wa.me/+573026841676?text=¡Hola Survivors! Tengo una idea y quisiera hacerla realidad...",
 		},
 		{
 			title: "Marketing Digital",
 			description:
 				"Aceleramos tu crecimiento online con estrategias de SEO y marketing digital efectivas. ¡Alcanza el éxito en la web con nosotros!",
 			slide: "right",
+			href: "https://wa.me/+573026841676?text=¡Hola Survivors! Deseo impulsar mis ventas o darle visibilidad a mi negocio",
 		},
 	];
 
@@ -70,6 +73,7 @@ export default function Products() {
 									title={item.title}
 									description={item.description}
 									slide={item.slide}
+									href={item.href}
 								/>
 							</SplideSlide>
 						))}
@@ -83,6 +87,7 @@ export default function Products() {
 							title={item.title}
 							description={item.description}
 							slide={item.slide}
+							href={item.href}
 						/>
 					))}
 				</>

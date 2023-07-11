@@ -6,9 +6,10 @@ interface ICustomButton {
 	children: any;
 	width?: number | string;
 	variant?: any;
+	href?: string;
 }
 export default function Custombutton(props: ICustomButton) {
-	const { children, width = 300, variant = "outlined" } = props;
+	const { children, width = 300, variant = "outlined", href } = props;
 	return (
 		<Button
 			className="button"
@@ -18,6 +19,7 @@ export default function Custombutton(props: ICustomButton) {
 				color: TEXT,
 			}}
 			variant={variant}
+			onClick={() => window.open(href, "__blank")}
 		>
 			{children}
 		</Button>

@@ -179,7 +179,9 @@ const Banner = () => {
 							item
 							style={{ margin: "30px", marginTop: "100px" }}
 						>
-							<Custombutton>Cotizar ahora</Custombutton>
+							<Custombutton href="https://wa.me/+573026841676?text=¡Hola Survivors! Me gustaría cotizar un servicio">
+								Cotizar ahora
+							</Custombutton>
 						</Grid>
 					</Fade>
 				</Grid>

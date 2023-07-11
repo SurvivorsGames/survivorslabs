@@ -8,12 +8,12 @@ import useResponsive from "commons/hooks/useResponsive";
 interface IProduct {
 	title: string;
 	description: string;
-	icon?: string;
+	href: string;
 	slide: string;
 }
 
 export default function Product(props: IProduct) {
-	const { title, description, slide } = props;
+	const { title, description, slide, href } = props;
 	const { isMobile, onlyMobile, onlyTablet } = useResponsive();
 
 	return (
@@ -56,7 +56,12 @@ export default function Product(props: IProduct) {
 					{description}
 				</Typography>
 			</Fade>
-			<Button variant="contained">Cotizar</Button>
+			<Button
+				variant="contained"
+				onClick={() => window.open(href, "__blank")}
+			>
+				Cotizar
+			</Button>
 		</Grid>
 	);
 }
