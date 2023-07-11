@@ -7,7 +7,7 @@ import ContactForm from "./components/Form";
 import Fade from "react-reveal/Fade";
 
 export default function Footer() {
-	const { isMobile } = useResponsive();
+	const { onlyMobile } = useResponsive();
 	return (
 		<Grid
 			container
@@ -28,51 +28,56 @@ export default function Footer() {
 			<Grid
 				item
 				md={12}
+				xs={12}
 				sx={{
 					display: "flex",
-					flexDirection: isMobile ? "column" : "row",
-					justifyContent: "space-between",
+					flexDirection: "row",
+					justifyContent: onlyMobile ? "center" : "space-between",
 					marginTop: "auto", // Añade esta línea
 					borderTop: `3px solid ${PRIMARY}`,
 				}}
 				className="footer"
 			>
-				<a
-					href="#about"
-					style={{ textDecoration: "none", color: TEXT }}
-				>
-					<Typography
-						sx={{ textAlign: "center" }}
-						variant={"h6"}
-						component="h6"
-					>
-						Acerca de
-					</Typography>
-				</a>
-				<a
-					href="#products"
-					style={{ textDecoration: "none", color: TEXT }}
-				>
-					<Typography
-						sx={{ textAlign: "center" }}
-						variant={"h6"}
-						component="h6"
-					>
-						Productos
-					</Typography>
-				</a>
-				<a
-					href="#contact"
-					style={{ textDecoration: "none", color: TEXT }}
-				>
-					<Typography
-						sx={{ textAlign: "center" }}
-						variant={"h6"}
-						component="h6"
-					>
-						Contacto
-					</Typography>
-				</a>
+				{!onlyMobile && (
+					<>
+						<a
+							href="#about"
+							style={{ textDecoration: "none", color: TEXT }}
+						>
+							<Typography
+								sx={{ textAlign: "center", fontSize: "1.3rem" }}
+								variant={"h6"}
+								component="h6"
+							>
+								Acerca de
+							</Typography>
+						</a>
+						<a
+							href="#products"
+							style={{ textDecoration: "none", color: TEXT }}
+						>
+							<Typography
+								sx={{ textAlign: "center", fontSize: "1.3rem" }}
+								variant={"h6"}
+								component="h6"
+							>
+								Productos
+							</Typography>
+						</a>
+						<a
+							href="#contact"
+							style={{ textDecoration: "none", color: TEXT }}
+						>
+							<Typography
+								sx={{ textAlign: "center", fontSize: "1.3rem" }}
+								variant={"h6"}
+								component="h6"
+							>
+								Contacto
+							</Typography>
+						</a>
+					</>
+				)}
 				<div
 					style={{
 						display: "flex",
