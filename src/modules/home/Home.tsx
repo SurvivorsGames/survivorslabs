@@ -7,6 +7,7 @@ import { Element } from "react-scroll";
 import Promoted from "modules/promoted/Promoted";
 import Products from "modules/products/Products";
 import useResponsive from "commons/hooks/useResponsive";
+import Footer from "modules/footer/Footer";
 
 export default function Home() {
 	const { isMobile } = useResponsive();
@@ -26,6 +27,9 @@ export default function Home() {
 			</Element> */}
 			<Element name="products" id="products" className="section">
 				<Products />
+			</Element>
+			<Element name="contact" id="contact" className="section">
+				<Footer />
 			</Element>
 		</Container>
 	);
