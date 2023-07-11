@@ -9,6 +9,8 @@ import InputLabel from "@mui/material/InputLabel";
 import styled from "@emotion/styled";
 import { Grid, Typography } from "@mui/material";
 import { TEXT } from "commons/theme/colors";
+import useContact from "../hooks/useContact";
+import CustomLoading from "commons/components/CustomLoading";
 
 const FormContainer = styled(Box)({
 	display: "flex",
@@ -16,14 +18,26 @@ const FormContainer = styled(Box)({
 	gap: "1em",
 });
 
+export interface IFormData {
+	nombre: string;
+	celular: string;
+	correo: string;
+	servicio: string;
+	mensaje: string;
+}
+
+const initialState = {
+	nombre: "",
+	celular: "",
+	correo: "",
+	servicio: "",
+	mensaje: "",
+};
+
 function ContactForm() {
-	const [formData, setFormData] = useState({
-		nombre: "",
-		celular: "",
-		correo: "",
-		servicio: "",
-		mensaje: "",
-	});
+	const [formData, setFormData] = useState<IFormData>(initialState);
+
+	const { loading, handleSendForm } = useContact();
 
 	const [error, setError] = useState<string | undefined>(undefined);
 
@@ -35,7 +49,7 @@ function ContactForm() {
 		});
 	};
 
-	const handleSubmit = (e: any) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 
 		const { nombre, celular, correo, servicio, mensaje } = formData;
@@ -45,7 +59,15 @@ function ContactForm() {
 			return;
 		}
 
-		// Aquí puedes seguir con la lógica para enviar los datos del formulario.
+		let result = await handleSendForm(formData);
+		if (result) {
+			setError(
+				"¡Hemos registrado tus datos! \n Un asesor se pondra en contacto contigo"
+			);
+			setFormData(initialState);
+		} else {
+			setError("Ha ocurrido un error. Intenta nuevamente");
+		}
 	};
 
 	return (
@@ -58,7 +80,8 @@ function ContactForm() {
 					height: "70vh",
 				}}
 			>
-				<Grid container spacing={1}>
+				{loading && <CustomLoading />}
+				<Grid container spacing={1} display={loading ? "none" : "flex"}>
 					<Grid item md={6} xs={12}>
 						<TextField
 							fullWidth

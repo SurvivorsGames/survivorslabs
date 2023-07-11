@@ -6,7 +6,7 @@ import useResponsive from "commons/hooks/useResponsive";
 import ContactForm from "./components/Form";
 import Fade from "react-reveal/Fade";
 
-export default function Footer() {
+export default function Contact() {
 	const { onlyMobile } = useResponsive();
 	return (
 		<Grid
