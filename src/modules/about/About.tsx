@@ -72,31 +72,6 @@ export default function About() {
 								<br />
 							</Typography>
 						</Grid>
-						<Fade when={isVisible} delay={500}>
-							<Grid
-								item
-								md={6}
-								sm={6}
-								xs={12}
-								sx={{
-									mt: 2,
-									display: "flex",
-									justifyContent: "center",
-								}}
-							>
-								<img
-									className="logo"
-									alt="logo.png"
-									src="https://firebasestorage.googleapis.com/v0/b/survivors-labs.appspot.com/o/assets%2FIcon.png?alt=media&token=5754d7df-0133-4be1-bbdf-3b4af127066e"
-									style={{
-										width: "150px",
-										alignSelf: "center",
-										margin: "20px",
-										objectFit: "contain",
-									}}
-								/>
-							</Grid>
-						</Fade>
 					</div>
 				</Fade>
 			</VisibilitySensor>

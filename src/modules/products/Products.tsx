@@ -60,7 +60,6 @@ export default function Products() {
 					<Splide
 						style={{
 							justifyContent: "center",
-							backgroundColor: "red",
 						}}
 						aria-label="Productos para ti"
 					>
