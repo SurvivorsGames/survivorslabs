@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	AppBar,
 	Toolbar,
@@ -9,7 +9,6 @@ import {
 	ListItem,
 	ListItemText,
 	Grid,
-	Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../styles/banner.css";
@@ -19,10 +18,15 @@ import Fade from "react-reveal/Fade";
 import useResponsive from "commons/hooks/useResponsive";
 import { Link } from "react-router-dom";
 import Custombutton from "commons/components/Custombutton";
+import Logger from "commons/hooks/Logger";
 
 const Banner = () => {
 	const { isMobile } = useResponsive();
 	const [openDrawer, setOpenDrawer] = React.useState(false);
+
+	useEffect(() => {
+		Logger.Event("load_banner");
+	}, []);
 
 	const handleDrawerToggle = () => {
 		setOpenDrawer(!openDrawer);

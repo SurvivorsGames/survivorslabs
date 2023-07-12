@@ -2,9 +2,16 @@ import { TEXT } from "commons/theme/colors";
 import { Grid, Typography } from "@mui/material";
 import useResponsive from "commons/hooks/useResponsive";
 import Zoom from "react-reveal/Zoom";
+import { useEffect } from "react";
+import Logger from "commons/hooks/Logger";
 
 function MotivationalText() {
 	const { isMobile } = useResponsive();
+
+	useEffect(() => {
+		Logger.Event("load_motivational_text");
+	}, []);
+
 	return (
 		<Grid
 			container

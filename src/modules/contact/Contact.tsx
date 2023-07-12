@@ -5,9 +5,15 @@ import { PRIMARY, TEXT } from "commons/theme/colors";
 import useResponsive from "commons/hooks/useResponsive";
 import ContactForm from "./components/Form";
 import Fade from "react-reveal/Fade";
+import { useEffect } from "react";
+import Logger from "commons/hooks/Logger";
 
 export default function Contact() {
 	const { onlyMobile } = useResponsive();
+
+	useEffect(() => {
+		Logger.Event("load_contact");
+	}, []);
 	return (
 		<Grid
 			container
@@ -88,14 +94,17 @@ export default function Contact() {
 					<SocialIcon
 						url={require("../../assets/social/instagram.png")}
 						to="https://www.instagram.com/survivorslabs/"
+						event="instagram"
 					/>
 					<SocialIcon
 						url={require("../../assets/social/facebook.png")}
-						to="https://www.facebook.com/people/Survivors-Labs/100094720953974/"
+						to="https://www.facebook.com/survivorslabs"
+						event="facebook"
 					/>
 					<SocialIcon
 						url={require("../../assets/social/whatsapp.png")}
 						to="https://wa.me/+573026841676?text=¡Hola Survivors! Me gustaría cotizar un servicio"
+						event="whatsapp"
 					/>
 				</div>
 			</Grid>
@@ -103,9 +112,14 @@ export default function Contact() {
 	);
 }
 
-const SocialIcon = ({ url, to }: any) => {
+const SocialIcon = ({ url, to, event }: any) => {
 	return (
-		<a href={to} target="__blank" style={{ textDecoration: "none" }}>
+		<a
+			onClick={() => Logger.Event(`social_icon_${event}`)}
+			href={to}
+			target="__blank"
+			style={{ textDecoration: "none" }}
+		>
 			<img
 				src={url}
 				alt="social.png"

@@ -2,14 +2,19 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import CustomTitle from "commons/components/CustomTitle";
 import Fade from "react-reveal/Fade";
 import VisibilitySensor from "react-visibility-sensor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/about.css";
+import Logger from "commons/hooks/Logger";
 
 export default function About() {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 	const [isVisible, setIsVisible] = useState(false);
 	const [active, setActive] = useState(true);
+
+	useEffect(() => {
+		Logger.Event("load_about");
+	}, []);
 
 	const onChange = (isVisible: boolean) => {
 		if (isVisible) {

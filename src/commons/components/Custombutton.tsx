@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import "./styles/button.css";
 import { TEXT } from "commons/theme/colors";
+import Logger from "commons/hooks/Logger";
 
 interface ICustomButton {
 	children: any;
@@ -19,7 +20,10 @@ export default function Custombutton(props: ICustomButton) {
 				color: TEXT,
 			}}
 			variant={variant}
-			onClick={() => window.open(href, "__blank")}
+			onClick={() => {
+				Logger.Event("button_cotizar_banner");
+				window.open(href, "__blank");
+			}}
 		>
 			{children}
 		</Button>

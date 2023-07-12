@@ -4,16 +4,18 @@ import { PRIMARY, TEXT } from "commons/theme/colors";
 import Fade from "react-reveal/Fade";
 import "../styles/products.css";
 import useResponsive from "commons/hooks/useResponsive";
+import Logger from "commons/hooks/Logger";
 
 interface IProduct {
 	title: string;
 	description: string;
 	href: string;
 	slide: string;
+	event: string;
 }
 
 export default function Product(props: IProduct) {
-	const { title, description, slide, href } = props;
+	const { title, description, slide, href, event } = props;
 	const { isMobile, onlyMobile, onlyTablet } = useResponsive();
 
 	return (
@@ -58,7 +60,10 @@ export default function Product(props: IProduct) {
 			</Fade>
 			<Button
 				variant="contained"
-				onClick={() => window.open(href, "__blank")}
+				onClick={() => {
+					Logger.Event(`cotizar_producto_${event}`);
+					window.open(href, "__blank");
+				}}
 			>
 				Cotizar
 			</Button>
