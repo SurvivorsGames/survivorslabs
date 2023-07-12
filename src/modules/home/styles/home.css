@@ -4,12 +4,14 @@
 
 	/* Tu estilo usual aquí, como asegurarte que esto sea un contenedor scrollable */
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 	height: 100vh;
 }
 
 .section {
 	/* Esto hace que el contenedor se detenga en esta sección */
 	scroll-snap-align: start;
+	scroll-behavior: smooth;
 
 	/* Tu estilo usual aquí */
 	height: 100vh;
