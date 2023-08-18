@@ -77,9 +77,8 @@ export default function Products() {
 						aria-label="Productos para ti"
 					>
 						{productList.map((item, index) => (
-							<SplideSlide>
+							<SplideSlide key={index}>
 								<Product
-									key={index}
 									title={item.title}
 									description={item.description}
 									slide={item.slide}
@@ -91,7 +90,7 @@ export default function Products() {
 					</Splide>
 				</Grid>
 			) : (
-				<>
+				<Grid display={"flex"} justifyContent={"center"}>
 					{productList.map((item, index) => (
 						<Product
 							key={index}
@@ -102,7 +101,7 @@ export default function Products() {
 							event={item.event}
 						/>
 					))}
-				</>
+				</Grid>
 			)}
 		</Grid>
 	);

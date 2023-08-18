@@ -6,10 +6,11 @@ import "./styles/home.css";
 import { Element } from "react-scroll";
 import Products from "modules/products/Products";
 import Contact from "modules/contact/Contact";
+import Learning from "modules/learning/Learning";
 
 export default function Home() {
 	return (
-		<Container className="container" maxWidth="xl" style={{ padding: 0 }}>
+		<Container className="container" maxWidth="xl">
 			<Element name="banner" id="banner" className="section">
 				<Banner />
 			</Element>
@@ -24,6 +25,9 @@ export default function Home() {
 			</Element> */}
 			<Element name="products" id="products" className="section">
 				<Products />
+			</Element>
+			<Element name="learning" id="learning" className="section">
+				<Learning />
 			</Element>
 			<Element name="contact" id="contact" className="section">
 				<Contact />
