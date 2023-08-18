@@ -37,27 +37,21 @@ export default function Product(props: IProduct) {
 			}}
 			className={isMobile ? "" : "product"}
 		>
-			<Fade
-				left={slide === "left"}
-				right={slide === "right"}
-				top={slide === "top"}
-				bottom={slide === "bottom"}
+			<CustomTitle textAlign={"center"}>{title}</CustomTitle>
+			<Typography
+				variant="body1"
+				component="p"
+				sx={{
+					color: TEXT,
+					fontFamily: "Roboto",
+					textAlign: "center",
+					fontSize: "20px",
+					letterSpacing: "1px",
+				}}
 			>
-				<CustomTitle textAlign={"center"}>{title}</CustomTitle>
-				<Typography
-					variant="body1"
-					component="p"
-					sx={{
-						color: TEXT,
-						fontFamily: "Roboto",
-						textAlign: "center",
-						fontSize: "20px",
-						letterSpacing: "1px",
-					}}
-				>
-					{description}
-				</Typography>
-			</Fade>
+				{description}
+			</Typography>
+
 			<Button
 				variant="contained"
 				onClick={() => {
