@@ -26,7 +26,7 @@ function MotivationalText() {
 					component="h1"
 					sx={{
 						color: TEXT,
-						fontSize: isMobile ? "4rem" : "6rem",
+						fontSize: isMobile ? "3.5rem" : "6rem",
 						textAlign: "center",
 					}}
 				>
